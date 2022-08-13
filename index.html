@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My_report</title>
+    </head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Noto+Sans+KR:wght@700&display=swap');
+    h1 {
+        font-family: 'Mochiy Pop P One';
+        text-align: center;
+        font-size: 100px;
+        margin-top: 40px;
+    }
+    input {
+        font-size: 50px;
+        position: relative;
+        top: center;
+        left: center;
+        transition: font-size 8s, color 100s;
+        font-weight: bolder;
+    }
+    body { 
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFhTUAqVD4PfbbzDk-rIeENBfePwUHtNLBdA&usqp=CAU);
+        background-repeat : no-repeat;
+        background-size: 100%;
+        height: auto;
+        width: auto;
+    }
+    a {
+        text-decoration: none;
+    }
+    .btn {
+        text-align: center;
+        position: relative;
+        top: 600px;
+
+    }
+    img {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        animation-name: move, fadeout;
+        animation-duration: 8s;
+        animation-iteration-count: 1;
+        border: 1px solid powderblue;
+        border-radius: 100px;
+    }
+    @keyframes move {
+      from { left: 0; }
+      to   { left: 2000px; }
+    }
+    @keyframes fadeout {
+      from { opacity: 1; }
+      to   { opacity: 0; }
+    }
+</style>
+<script>
+const hexcode = function(){
+    const hexNumbers = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+    let result = "#";
+     
+    for(let i=0; i<6; i++){
+    const randomIndex = Math.floor(Math.random() * hexNumbers.length);
+    result += hexNumbers[randomIndex];
+    }
+    return result;
+}
+const changeBackcolor = function(){
+    document.body.style.color = hexcode();
+}
+setTimeout(()=>changeBackcolor(), 500)
+
+let img = document.createElement('img');
+img.setAttribute('src', 'https://i.pinimg.com/originals/7f/79/61/7f7961095d349c69866fbd284704099b.png')
+
+const newPage = function(){
+  location.href = '1.html';
+}
+
+setTimeout(()=>newPage(), 7000)
+
+</script>
+<body>
+
+<h1>Hello World</h1>
+<div class="btn">
+    <input type="button" value="출발하기" onclick="
+        this.style.fontSize = '20px';
+        document.body.appendChild(img);
+    ">
+
+</div>
+</body>
+</html>
